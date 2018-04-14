@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>promise3</title>
+</head>
+<script>
+	//promise 4道问题
+	dosomething().then(()=>{
+		return dosomethingelse();
+	}).then(finalhandler);
+	//dosomething-->dosomethingelse-->finalhandler
+	dosomething().then(()=>{
+		 dosomethingelse();
+	}).then(finalhandler);
+	//因为没有return,基本等于返回空值，两个.then几乎同时执行
+	dosomething().then(dosomethingelse()).then(finalhandler);
+	//dosomething()和dosomethingelse()几乎同时执行因为dosomethingelse()并不处于队列当中
+	dosomething().then(dosomethingelse);
+	//相当于传了一个函数进入，所以流程是dosomething->dosomethingelse->finalhandler
+
+	
+	
+</script>
+<body>
+	promise经典4题
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>class体验</title>
+</head>
+<script>
+	class str{
+		constructor(name){
+			console.log(name);
+		}
+		sayName(love,ms){
+			setTimeout(()=>{
+				console.log(love);
+			},ms);
+			
+		}
+	}
+	//class的内置函数，参数直接调用，而不用箭头函数传参传给下层
+	const str1=new str('fuck');
+	str1.sayName('baba',500);
+
+
+</script>
+<body>
+	
+</body>
+</html>

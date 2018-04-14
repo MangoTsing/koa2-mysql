@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>promise6</title>
+</head>
+<script>
+	var log=console.log;
+	log('start');
+	Promise.all([1,2,3])//参数可以为数组，返回数组，并且等待promise完成，若有一个promise失败，.catch的值为第一个失败的promise
+	.then(all=>{
+		log('1:',all);//因为1，2，3都不是promise对象，立即返回
+		return Promise.all([function(){
+			log('fuck');//这个function也不是promise实例，立即返回
+		},'fuck2',false]);
+	})
+	.then(all=>{
+		log('2:',all);
+		let p1=new Promise(resolve=>{
+			setTimeout(()=>{
+				resolve('I\'m P1');
+			},1500);
+		});
+		let p2=new Promise(resolve=>{
+			setTimeout(()=>{
+				resolve('I\'m P2');
+			},3000);
+		})
+		return Promise.all([p1,p2]);
+	})
+		.then(all=>{
+			log('3:',all);
+			let p1=new Promise((resolve,reject)=>{
+				setTimeout(()=>{
+					reject('fuckyou1');
+
+				},4500);
+
+			});
+			let p2=new Promise((resolve,reject)=>{
+				setTimeout(()=>{
+					reject('fuckyou2');
+
+				},3500);
+
+			});
+			let p3=new Promise((resolve,reject)=>{
+				setTimeout(()=>{
+					reject('fuckyou3');
+
+				},3500);
+
+			});
+				return Promise.all([p1,p2,p3]);
+
+		})
+		.then(all=>{
+			log('all:',all);
+		})
+		.catch(err=>{//若失败，catch返回第一个失败的promise err
+			log('err:'+err);
+		})
+</script>
+<body>
+	Promise.all()方法
+	<p>用于将多个Promise实例，包装成一个新的promise</p>
+</body>
+</html>

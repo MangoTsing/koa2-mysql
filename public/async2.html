@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>async2</title>
+</head>
+<script>
+function timeOut(ms){
+		return new Promise((resolve)=>{
+			setTimeout(function(){console.log('baba');resolve();},ms);
+		});
+	}
+
+	//若想结束Promise函数比如使用reject()或者resolve()
+	async function asyncPrint(value,ms){
+		await timeOut(ms);
+		console.log(value);
+	}//async函数返回Promise对象,可以作为await命令的参数哦
+	asyncPrint('fuck',3000);
+
+	
+	async function timeOut(ms){
+		await new Promise((resolve)=>{
+			setTimeout(()=>{console.log('bababa');resolve();},ms);
+		})
+	}//无论是不是异步定义的，后面的就是最终执行的。over
+</script>
+<body>
+	<pre>async函数返回一个 Promise 对象，
+	可以使用then方法添加回调函数。当函数执行的时候，
+	一旦遇到await就会先返回，等到异步操作完成，
+	再接着执行函数体内后面的语句。</pre>
+	<br>
+	<pre>		function timeout(ms) {
+			  return new Promise((resolve) => {
+			    setTimeout(resolve, ms);
+			  });
+			}
+
+			async function asyncPrint(value, ms) {
+			  await timeout(ms);
+			  console.log(value);
+			}
+
+asyncPrint('hello world', 50);
+上面代码指定 50 毫秒以后，输出hello world。
+
+由于async函数返回的是 Promise 对象，可以作为await命令的参数。所以，上面的例子也可以写成下面的形式。
+
+		async function timeout(ms) {
+		  await new Promise((resolve) => {
+		    setTimeout(resolve, ms);
+		  });
+		}
+
+		async function asyncPrint(value, ms) {
+		  await timeout(ms);
+		  console.log(value);
+		}
+
+		asyncPrint('hello world', 50);</pre>
+		//若想结束Promise函数比如使用reject()或者resolve()
+		//无论是不是异步定义的，后面的就是最终执行的。over
+</body>
+</html>

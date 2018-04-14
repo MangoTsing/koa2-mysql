@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>async5</title>
+</head>
+<script>
+	async function getTitle(url) {
+  let response = await fetch(url);
+  let html = await response.text();
+  console.log(response);
+  return html.match(/<title>([\s\S]+)<\/title>/i)[0];
+}
+getTitle('https://tc39.github.io/ecma262/').then(console.log)
+// "ECMAScript 2017 Language Specification"
+//利用fetch API加上正则表达式，对得到的异步函数返回的PROMISE对象进行.then处理
+	async function getHeader(url){
+		let res=await fetch(url);
+		let html=await res.text();
+		//console.log(res);
+		return html.match(/<p>([\s\S]+)<\/p>/i)[0];
+	}
+	getHeader('https://tc39.github.io/ecma262/').then(console.log)
+</script>
+<body>
+<strong>Promise 对象的状态变化</strong>
+	<pre>async函数返回的 Promise 对象，
+	必须等到内部所有await命令后面的 Promise 对象执行完，
+	才会发生状态改变，除非遇到return语句或者抛出错误。
+	也就是说，只有async函数内部的异步操作执行完，
+	才会执行then方法指定的回调函数。</pre>
+	<p>//利用fetch API加上正则表达式，对得到的异步函数返回的PROMISE对象进行.then处理</p>
+	//也得得到跨域允许
+</body>
+</html>

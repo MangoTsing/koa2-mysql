@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>async3</title>
+</head>
+<script>
+let  obj={async foo(){};}
+obj.foo().then()
+//对象方法
+
+class Storage {
+  constructor() {
+    this.cachePromise = caches.open('avatars');
+  }
+
+  async getAvatar(name) {
+    const cache = await this.cachePromise;
+    return cache.match(`/avatars/${name}.jpg`);
+  }
+}
+
+const storage = new Storage();
+storage.getAvatar('jake').then(…);
+
+//class的方法，但是不懂
+
+const foo=async()=>{};
+//箭头函数
+</script>
+<body>
+	//class的方法，但是不懂
+	<pre>
+		class Storage {
+		  constructor() {
+		    this.cachePromise = caches.open('avatars');
+		  }
+
+		  async getAvatar(name) {
+		    const cache = await this.cachePromise;
+		    return cache.match(`/avatars/${name}.jpg`);
+		  }
+		}
+
+		const storage = new Storage();
+		storage.getAvatar('jake').then(…);
+	</pre>
+</body>
+</html>

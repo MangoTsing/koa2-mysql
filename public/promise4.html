@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>promise4</title>
+</head>
+<script>
+	var log=console.log;
+	new Promise(resolve=>{
+		 setTimeout(()=>{
+             throw new Error('good bad');
+             //曝出错误走.catch()
+		 },2000);
+	})//promise的遗憾，仍无法确定哪一个部分导致的错误
+		.then(value=>{
+			log(value+'world');
+		})
+		.catch(error=>{
+			log(error.message+'error');
+		});
+
+	let promise =new Promise((resolve,reject)=>{
+		setTimeout(reject('byebye'),2000);
+	})
+		.then(value=>{
+			log(value+'ok');
+		},value=>{
+			log(value+'not')
+		});
+
+		//promise错误处理两种办法，reject和throw new Error。推荐使用throw+catch()=》清晰好读
+</script>
+<body>
+	error.js
+</body>
+</html>

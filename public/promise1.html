@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>promise2</title>
+</head>
+<script>
+	var log=console.log;
+	let promise=new Promise(resolve=>{
+		setTimeout(()=>{
+			resolve('hello');
+			log('fulfilled');
+			     
+			
+		},1000);
+	});
+	//当promise已经执行完，fulfilled之后
+	//依然可以通过.then()来调用函数
+	setTimeout(()=>{
+		promise.then(value=>{
+			log(value);
+		})
+	},3000);
+</script>
+<body>
+	.then的连续执行
+</body>
+</html>

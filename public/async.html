@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>async</title>
+</head>
+<script>
+	function resolveSeconds(x){
+		return new Promise(resolve=>{
+			setTimeout(()=>{
+				resolve(x);
+
+			},2000);
+		})
+	}
+	async function f1(){
+		var x=await resolveSeconds(10);
+		console.log(x);
+
+	}
+	f1();
+	class Confirm{
+		constructor(){
+			console.log('abc');
+		}
+		say(){
+			console.log('abb');
+		}
+	}
+	//class animals extends Points{}
+	class Points{
+		constructor(){
+			
+			
+		}
+		ani(){
+			let _this=this
+			console.log(_this.name);
+		}
+	}
+	let poi =new Points();
+	let con=new Confirm();
+	poi.ani();
+	//con.say();
+	//con.say();
+
+</script>
+<body>
+	
+</body>
+</html>

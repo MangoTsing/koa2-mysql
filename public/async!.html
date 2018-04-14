@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>实现原理啊</title>
+</head>
+<script>
+	//async 函数的实现原理，就是将 Generator 函数和自动执行器，包装在一个函数里。
+	async function fn(args){
+		//
+	}
+	function fn(args){
+		return spawn(function* (){
+			//..spawn是自动执行器
+		});
+	}
+	//spawn实现
+	function spawn(genF) {
+  return new Promise(function(resolve, reject) {
+    const gen = genF();
+    function step(nextF) {
+      let next;
+      try {
+        next = nextF();
+      } catch(e) {
+        return reject(e);
+      }
+      if(next.done) {
+        return resolve(next.value);
+      }
+      Promise.resolve(next.value).then(function(v) {
+        step(function() { return gen.next(v); });
+      }, function(e) {
+        step(function() { return gen.throw(e); });
+      });
+    }
+    step(function() { return gen.next(undefined); });
+  });
+}
+</script>
+<body>
+	
+</body>
+</html>

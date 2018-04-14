@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>promise5</title>
+</head>
+<script>
+	var log=console.log;
+	new Promise(resolve=>{
+		resolve();
+	},1000)
+		.then(()=>{
+			log('start');
+			throw new Error('error1');
+		})
+		.catch(err=>{
+			log('i catch' + err);
+			throw new Error('error1');//抛出错误则跳过下面两个.then()方法
+		})//catch()也返回promise实例没错误也是ok的
+		.then(()=>{
+			log('arrive 1');
+		})
+		.then(()=>{
+			log('arrive 2');
+		})
+		.catch(err=>{
+			log('i catch1'+ err);
+			//建议所有队列最后都加上catch(),方便捕获错误。
+		})
+</script>
+<body>
+	.catch()+.then()会发生什么？
+</body>
+</html>

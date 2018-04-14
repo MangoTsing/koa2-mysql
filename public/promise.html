@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>promise</title>
+</head>
+<script>
+	var log =console.log;
+	log('hello im sg');
+	new Promise(resolve=>{
+		setTimeout(()=>{
+			resolve('hello');
+		},2000);
+	}				
+//新promise实例，用.then获取传递数据,并进行return new Promise()操作进行第二次回调函数。
+		).then(value=>{
+			log(value+'world');//hello world
+			return new Promise(resolve=>{
+				setTimeout(()=>{
+					resolve('world');
+				},2000);
+			})
+		}).
+
+	then(value=>{
+			console.log(value+'world')//world world
+		});
+
+	
+
+</script>
+<body>
+	第一次promise
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>async8</title>
+</head>
+<script>
+	async function f() {
+  for await (const x of createAsyncIterable(['a', 'b'])) {
+    console.log(x);
+  }
+}
+
+</script>
+<body>
+<strong>for await...of</strong>
+前面介绍过，for...of循环用于遍历同步的 Iterator 接口。新引入的for await...of循环，则是用于遍历异步的 Iterator 接口。
+	<pre>
+		yield*语句也可以跟一个异步遍历器。
+
+		async function* gen1() {
+		  yield 'a';
+		  yield 'b';
+		  return 2;
+		}
+
+		async function* gen2() {
+		  // result 最终会等于 2
+		  const result = yield* gen1();
+		}
+		上面代码中，gen2函数里面的result变量，最后的值是2。
+
+		与同步 Generator 函数一样，for await...of循环会展开yield*。
+
+		(async function () {
+		  for await (const x of gen2()) {
+		    console.log(x);
+		  }
+		})();
+// a
+// b
+	</pre>
+</body>
+</html>
