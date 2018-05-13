@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>5.10 e</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>5.10</h1>
+<h2>前端工程化</h2>
+<p>1.什么是前端工程化</p>
+<p>软件工程：创立与使用健全的工程原则，以便经济地获得可靠软件。</p>
+<p>将前端开发流程，技术，工具，经验等规范化，标准化</p>
+<p>开发者，多人合作，也可以独立开发，需要关注的点更多，安全，性能，部署</p>
+<p>代码方面：前端代码分散在后端目录中</p>
+<p>SASS ES6</p>
+<p>代码校验</p>
+<p>代码有相似性</p>
+<h2>现代前端工程</h2>
+<p>1.规范化2.模块化3.组件化开发（业务开发）</p>
+<p>4.开发流程5.测试6.部署7.性能优化8.监控统计（工程优化）</p>
+<p>组件化开发</p>
+<pre><code>webapp=page1+page2+...
+page=layout+component
+</code></pre>
+
+<h3>模块化——css</h3>
+<p>代码检查-&gt;预处理-&gt;后处理-&gt;合并-&gt;压缩</p>
+<p>CSSLINT SCSS-LINT STYLELINT</p>
+<p>SASS LESS STYLUS</p>
+<p>Autoprefixer
+去注释 图片Sprites</p>
+<p>css-combo合并</p>
+<p>clean-css压缩</p>
+<p>CSS Modules，解决变量名全局污染的问题</p>
+<h3>模块化--js</h3>
+<p>commonJs
+AMD
+CMD
+Es6:import
+Nodejs
+requireJs
+seaJs</p>
+<p>JsLint
+EsLint代码检查</p>
+<p>TypeScript编译</p>
+<p>合并</p>
+<p>UglifyJS压缩</p>
+<h3>规范化：</h3>
+<p>变量命名规范，固定的DOM结构，各自项目约定 Airbnb代码规范</p>
+<p>文件结构规范，assets,components config libs view</p>
+<p>代码检测，styleLint JSLint，代码风格的约束。</p>
+<h3>开发流程</h3>
+<p>前端接口——mock api</p>
+<p>实时编译——nodeman监控js里面源码，自动生效，webpack- -watch监控静态资源变化，有变化自动编译。</p>
+<p>实时更新——webpack-dev-server --hot热更新，一更改js浏览器实时刷新，browser-sync有修改同步到浏览器</p>
+<p>本地调试 vscode</p>
+<h2>别的语言怎么构建</h2>
+<p>1.构建指的是建设的过程 2.大多数情况下，指创建事物过程中动手的那部分</p>
+<p>makefiles
+ApacheMaven shell</p>
+<p>前端构建工具
+grunt gulp负责流程任务运行</p>
+<p>webpack和grunt gulp不一样，webpack模块打包工具</p>
+<p>每个公司有自己的构建解决方案</p>
+<p>gulp是通过一系列的插件实现了原本复杂繁琐的任务自动化，流的概念，拷贝替换文件，自动保存，提交</p>
+<p>npm script-&gt;&gt;package.json里可以写简单的shell命令串联起来</p>
+<p>对比：
+gulp优势：有很多好的插件，较为成熟 </p>
+<p>npm script 优势：本来开发就需要Npm工具</p>
+<p>gulp劣势：以来插件开发者，需要关注的文档多，难以调试</p>
+<p>npm script劣势：对shell命令有一定要求，不容易添加注释，原本就是json格式</p>
+<h3>Webpack</h3>
+<p>模块化打包工具，一切资源均模块，以JS为入口，只适合资源的处理，不适合对任务流程的处理。（整个开发流程中的一部分，不是全部）</p>
+<pre><code>module.exports={
+    entry:'./entry.js',
+    output:{
+        path:__dirname,
+        filename:'bundle.js'
+        },
+    modules:{
+        rules:[{test:/\.js$/}]
+        }
+    }
+</code></pre>
+
+<p>串联式模块加载器以及插件机制</p>
+<p>支持按需加载，降低首屏加载时间？</p>
+<p>项目特点：
+页面相似度高，组件重用，结构化，单页应用-》thinkjs+Vue</p>
+<p>前后端都由FE来开发，前后端分离-》更方便的开发流程</p>
+<p>迭代速度快</p>
+<h2>webpack 相关</h2>
+<p>cross-env webpack-w webpack-dev-server (proxy --hot)</p>
+<p>qcdn-webpack-plugin</p>
+<ul><li>
+webpack插件</li><li>将webpack生成的静态资源
+</li><li></li><li></li></ul>
+<h2>开发流程</h2>
+<p>线上仓库-》git hooks钩子函数，定时对线上机进行拉取</p>
+<p>pm2--watch可以监控文件动态，若有更新自动重启。还可以对内存等进行监控。</p>
+<p>keymetrics,对线上机进行状态监控</p>
+<h2>开发工具结合业务特点落地</h2>
+<p>不需要全部使用，前端工程化的东西很多，但需要根据目的进行合适的选型，而不能为了用工具而使用。</p>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

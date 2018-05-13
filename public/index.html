@@ -80,6 +80,7 @@
         <a href="https://github.com/MangoTsing/hlju"><p class="pp">黑龙江大学教代网</p></a>
         <a href="https://github.com/MangoTsing/ErXue">  <p class="pp">耳穴网</p></a>
         <a href="https://github.com/MangoTsing/kys24"> <p>哈尔滨正大钰河公司电商平台</p></a>
+        <a href="https://github.com/MangoTsing/JavaScript-2048game"><p> 原生js写的完整2048游戏</p></a>
     </div>
     <div class="hiBoy">
         <span>My Blog 下的功能</span>
@@ -90,21 +91,54 @@
     </div>
     <div class="hiBoy">
         <span>这里是我的博文链接</span>
+        <a href="./2048.html"><p >2048游戏</p></a>
     </div>
     <strong>mangotsing_sgyp blog</strong>
 </div>
 </body>
 <script>
-    (function(){
-        var leng=document.getElementsByTagName('p');
-        for(var i=0;i<leng.length;i++){
+    // (function(){
+    //     var leng=document.getElementsByTagName('p');
+    //     for(var i=0;i<leng.length;i++){
 
-            if(leng[i].clientWidth<140){
+    //         if(leng[i].clientWidth<140){
 
-                leng[i].style.width='140px';
-                console.log(leng[i].clientWidth)
+    //             leng[i].style.width='140px';
+    //             console.log(leng[i].clientWidth)
+    //         }
+    //     }
+    // })();
+
+    (function(window){
+        var jQuery=function(selector){
+            return jQuery.fn.init(selector);
+        }
+        jQuery.fn={
+
+        }
+        jQuery.fn.prototype={
+            css:function(key,value){
+                console.log(key+value);
+            },
+            html:function(value){
+                console.log(value);
             }
         }
-    })();
+        var init=jQuery.fn.init=function(selector){
+            var slice=Array.prototype.slice;
+            var dom=slice.call(document.querySelectorAll(selector));
+            var i,len=dom?dom.length:0;
+            for(i=0;i<len;i++){
+                this[i]=dom[i];
+                this.length=len
+                this.selector=selector||''
+            }
+
+
+        }
+        init.prototype=jQuery.fn;
+        window.$=jQuery;
+    })(window);
+  console.log($(''));
 </script>
 </html>

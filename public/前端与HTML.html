@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>5.6上午</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h2>5.6日360上午</h2>
+<p>--赵文博</p>
+<h3>1.前端与HTML</h3>
+<h5>什么是前端？</h5>
+<blockquote>
+<p>1.web标准技术：HTML CSS JS SVG HTTP等<br/>
+2.运行环境<br/>
+3.界面与交互<br/></p>
+</blockquote>
+<p>美观 功能 无障碍 安全 性能 兼容性 体验</p>
+<h5>前端的边界？</h5>
+<p>nodejs </p>
+<p>electron</p>
+<p>ReactNative</p>
+<p>webrtc(浏览器实时通讯)</p>
+<p>webgl</p>
+<h5>doctype的作用</h5>
+<p>1.指定文档使用的标准和版本</p>
+<p>2.浏览器根据doctype决定使用哪种渲染模式(不写可能会出现怪异模式)</p>
+<h5>语义化</h5>
+<blockquote>
+<p>1.HTML中的元素，属性以及属性的值都拥有某些含义<br/>
+2.开发者应该遵循语义化编写HTML</p>
+</blockquote>
+<p>为什么强调语义化？<br/></p>
+<blockquote>
+<p>1.提升可读性，可维护性<br/>
+2.搜索引擎优化<br/>
+3.提升无障碍性</p>
+</blockquote>
+<p>元数据元素（看不到）link<br/>
+流式元素，能看到的<br/>
+段落内容 a<br/>
+嵌入式内容 video<br/>
+可交互内容 input audio<br/>
+章节内容 article nav<br/>
+P标签里面可以放段落内容(看HTML规范，不看w3c的，看短的)<br/></p>
+<h2></h2>
+<h5>HTML的扩展性</h5>
+<p>1.meta标签</p>
+<blockquote>
+<p>http-equiv<br/>
+keywords<br/>
+format-de<br/>
+viewport<br/>
+description<br/>
+content:ie=edge<br/></p>
+</blockquote>
+<p>2.data*&amp;dataset API</p>
+<pre><code>&lt;li data-id=&quot;1&quot;&gt;&lt;/li&gt;
+</code></pre>
+
+<p>通过 element.dataset可以取得</p>
+<p>3.<code>&lt;link&gt;</code>标签</p>
+<blockquote>
+<p><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;xx.css&quot;&gt;</code></p>
+<p><code>rel=prefecon href=&quot;xx.png&quot;</code>//性能优化图片</p>
+<p><code>rel=dns-prefecon href=&quot;example.com&quot;</code>//dns预先解析</p>
+</blockquote>
+<p>4.JSON-LD</p>
+<blockquote>
+<p><code>&lt;script type=&quot;application/ld+json&quot;&gt;{}&lt;/script&gt;</code>
+//JSON数据</p>
+</blockquote>
+<p>5.web无障碍</p>
+<blockquote>
+<p>可以让任何人获取到页面上的内容<br/>
+或可访问性<br/>
+不让身体，心里或技术上的问题成为获取信息的障碍<br/>
+//如形状区分，颜色(红绿色盲)</p>
+</blockquote>
+<h2></h2>
+<h3>web开发者做的事</h3>
+<p>1.WCAG 2.0//页面使用图片，得用替代性文字描述，能让盲人访问<br/>
+2.ARIA <code>&lt;ol role=&quot;tablist&quot;&gt;</code>//role这个东西，告诉浏览器这块是什么东西</p>
+<h4>提升无障碍性</h4>
+<p>1.为Img提供alt属性//不仅为盲人有用，还有其他设备，能在IMG不被看见的时候展示<br/>2.noscript标签//正常情况下看不到，只有当禁用script时会显示出来。<br/>3.input和Label对应//无论是否考虑无障碍行都需要做，label放大了点击范围，如果有单选框不设置label很难选中<br/>4.图形验证码与语音验证码<br/>5.文字和背景有足够对比度<br/>6.键盘的操作//去掉Outline会造成focus状态不明显。遮罩弹出层会在TAB focus时切出Model内的问题。</p>
+<h4>工具</h4>
+<p>1.w3c valicteror<br/>
+2.<strong>ammat</strong> //HTML的展开功能，有用<br/>
+3.markdown<br/></p>
+<p>table标签会在HTML渲染完成才会渲染，而不是流式的。</p>
+<h2>2.css3</h2>
+<p>1.css的版本 2.2规范，3增加内容<br/>
+2.选择器：通配，ID,类，属性【type=&quot;checkbox&quot;】 【“href&quot;*=&quot;xxxxx”】 ，伪类 ；hover :focus //tabindex=1可以选中 ，结构性伪类 :first-child :nth-of-type() :emtry//为空时选中 ，伪元素 ： ::before ::after ::first-letter(首字母)//伪元素相当于伪造一个元素，多出一个包裹元素定义样式。</p>
+<blockquote>
+<p><code>&lt;input type=&quot;checkbox&quot; id='t'&gt;&lt;label for='t'&gt;</code>
+<br/>进行关联</p>
+</blockquote>
+<p>3.选择器的权重</p>
+<p>4.css的样式来源
+	<br/>
+1.用户设置<br/>2.浏览器预设<br/>3.页面开发者<br/></p>
+<h2></h2>
+<h4>那条声明起作用？<br/></h4>
+<p>1.找出匹配到该元素所有申明<br/>
+2.根据浏览器优先级从低到高：浏览器预设，用户设置，网页样式<br/>
+3.同一来源中，特殊的优先级高<br/>
+4.优先级一样，后面的优先级高</p>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
